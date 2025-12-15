@@ -2,15 +2,29 @@
   background: var(--bg-secondary);
   height: var(--navbar-height);
   position: sticky;
-  top: 0;
+  top: 10px;
   z-index: 100;
-  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  margin: 0 auto;
+  width: 95%;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+}
+
+[data-theme="dark"] .navbar {
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(224, 224, 224, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 .navbar-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 var(--spacing-lg);
   height: 100%;
   display: flex;
   align-items: center;
@@ -22,6 +36,9 @@
   font-size: 1.5rem;
   font-weight: bold;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo-bold {
@@ -80,11 +97,20 @@
   justify-content: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  color: var(--text-primary);
 }
 
 .theme-toggle:hover {
   background: var(--border);
   transform: rotate(20deg);
+}
+
+[data-theme="dark"] .theme-toggle svg {
+  color: #ffffff;
+}
+
+[data-theme="light"] .theme-toggle svg {
+  color: #0f0f0f;
 }
 
 .btn-upload {
@@ -138,6 +164,16 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    width: 95%;
+    border-radius: 30px;
+    top: 10px;
+  }
+
+  .navbar-container {
+    padding: 0 var(--spacing-md);
+  }
+
   .navbar-search {
     display: none;
   }

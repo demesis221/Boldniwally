@@ -1,12 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import { LogoIcon } from '../../components/common/Icons';
 import './Auth.css';
+
+const carouselImages = [
+  'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=600&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&h=800&fit=crop',
+];
 
 const Register = () => {
   const navigate = useNavigate();
   const { register } = useAuth();
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -20,9 +35,29 @@ const Register = () => {
 
   return (
     <div className="auth-page">
-      <div className="auth-container">
+      <div className="auth-layout">
+        <div className="auth-carousel">
+          <div className="carousel-images" style={{ transform: `translateX(-${currentImage * 100}%)` }}>
+            {carouselImages.map((img, index) => (
+              <img key={index} src={img} alt={`Anime ${index + 1}`} />
+            ))}
+          </div>
+          <div className="auth-carousel-indicators">
+            {carouselImages.map((_, index) => (
+              <button
+                key={index}
+                className={`auth-indicator ${currentImage === index ? 'active' : ''}`}
+                onClick={() => setCurrentImage(index)}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="auth-container">
         <div className="auth-header">
-          <h1><span className="logo-bold">BOLD</span> ni Wally</h1>
+          <div className="auth-logo">
+            <LogoIcon />
+          </div>
+          <h1><span className="logo-bold">Younime</span>.TV</h1>
           <p>Create your account</p>
         </div>
 
@@ -69,6 +104,7 @@ const Register = () => {
         <div className="auth-footer">
           <p>Already have an account? <Link to="/login">Login</Link></p>
         </div>
+      </div>
       </div>
     </div>
   );

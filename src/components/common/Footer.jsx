@@ -5,8 +5,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-brand">
-          <h3><span className="logo-bold">BOLD</span> ni Wally</h3>
-          <p>by Jeff Sarmago</p>
+          <h3><span className="logo-bold">Younime</span>.TV</h3>
+          <p>Your Anime Streaming Platform</p>
         </div>
         <div className="footer-links">
           <div className="footer-column">
@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 BOLD ni Wally. All rights reserved.</p>
+        <p>&copy; 2024 Younime.TV. All rights reserved.</p>
       </div>
     </footer>
   );

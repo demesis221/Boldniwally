@@ -5,6 +5,15 @@
   padding: var(--spacing-xl) 0;
 }
 
+[data-theme="dark"] .footer {
+  background: rgba(20, 20, 20, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .footer {
+  background: var(--bg-secondary);
+}
+
 .footer-container {
   max-width: 1400px;
   margin: 0 auto;

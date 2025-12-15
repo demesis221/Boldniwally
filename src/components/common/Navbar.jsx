@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { useTheme } from '../../hooks/useTheme';
-import { SunIcon, MoonIcon, SearchIcon } from './Icons';
+import { SunIcon, MoonIcon, SearchIcon, LogoIcon } from './Icons';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -18,8 +18,9 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <span className="logo-bold">BOLD</span>
-          <span className="logo-text"> ni Wally</span>
+          <LogoIcon />
+          <span className="logo-bold">Younime</span>
+          <span className="logo-text">.TV</span>
         </Link>
 
         <div className="navbar-search">

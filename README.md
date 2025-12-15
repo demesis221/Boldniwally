@@ -1,7 +1,7 @@
-# BOLD ni Wally
-### by Jeff Sarmago
+# Younime.TV
+### Your Anime Streaming Platform
 
-A modern video streaming & upload platform frontend built with React + Vite, inspired by YouTube and 9Anime.
+A modern anime streaming & upload platform frontend built with React + Vite, featuring a sleek dark mode design with glassmorphism effects.
 
 ## 🚀 Features
 
@@ -10,7 +10,8 @@ A modern video streaming & upload platform frontend built with React + Vite, ins
 - **Upload Page** - Video upload form with thumbnail support
 - **Authentication** - Login/Register pages (Supabase-ready)
 - **User Profile** - Channel page with uploaded videos
-- **Dark Mode** - Netflix/9Anime inspired design
+- **Dark/Light Mode** - Modern glassmorphism design with theme toggle
+- **Hero Carousel** - Auto-sliding featured anime showcase
 - **Fully Responsive** - Mobile, tablet, and desktop optimized
 
 ## 🛠️ Tech Stack
@@ -96,4 +97,4 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ## 📄 License
 
-Created by Jeff Sarmago - BOLD ni Wally © 2024
+Younime.TV © 2024 - Your Anime Streaming Platform
