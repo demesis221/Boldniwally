@@ -42,11 +42,12 @@
 }
 
 .logo-bold {
-  color: var(--accent);
+  color: white;
 }
 
 .logo-text {
-  color: var(--text-primary);
+  color: #ff0000 !important;
+  font-size: 1em !important;
 }
 
 .navbar-search {
